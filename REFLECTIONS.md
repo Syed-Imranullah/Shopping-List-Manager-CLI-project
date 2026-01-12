@@ -1,7 +1,15 @@
 1. Share one aspect of building this project you found challenging and how you overcame it.
 
-[Write your reflection here]
+One of the hardest parts of building this shopping cart CLI project was figuring out how to structure it using classes and methods. At first, I didn’t fully understand how to organize the code, so I made it work in a single file without separating the menu, shopping list logic, and main app. Everything worked, but the code was messy, hard to follow, and not scalable. I realized that if I wanted to add or change features later, it would get even more confusing.
+
+After testing and understanding the flow, I refactored the project into a three-folder structure: the main app file startApp, the menu file showMenu, and the shopping list file where the ShoppingItem class and all logic live. Using this structure made it clear how each part interacts. For example, the ShoppingItem class handles each item’s name, quantity, and price, and its methods calculate totals and remove quantities. The shopping list logic manages adding items, removing items, updating quantities, and returning the current list or totals. Separating the menu allowed me to cleanly handle user input through prompt-sync while keeping the main app simple.
+
+Refactoring and testing each method individually helped me understand how classes and methods can make the program organized, readable, and functional. It also made debugging much easier because I could isolate where problems were happening.
 
 2. Share one technical concept that you gained a deeper understanding of through building this project. Explain that concept in simple terms and explain how it is used in your project.
 
-[Write your reflection here]
+The project helped me gain a much deeper understanding of classes, methods, and modular code. A class is like a blueprint for creating objects, and methods are functions inside the class that define what those objects can do. In my project, the ShoppingItem class stores the item’s name, quantity, and price, with methods like getTotal to calculate the item’s cost and removeQuantity to update or remove items.
+
+Using this class, I was able to handle all the main features of the shopping cart, including adding new items, removing items, updating quantities, viewing the list, and calculating totals. The shopping list itself is an array of ShoppingItem objects, and methods like addItem, removeItem, getList, and getTotals make it easy to manipulate the cart without duplicating logic. The showMenu function uses a loop and conditionals to guide the user through the menu and call the right methods based on their input.
+
+he main app handles starting and exiting the program, the menu handles input and menu options, and the shopping list file manages all cart logic. This project taught me not just to make code work, but to make it structured, maintainable, and easy to expand.
